@@ -1,0 +1,133 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+#usernamePrompt {
+    text-align: center;
+}
+
+#chatContainer {
+    display: flex;
+    flex-direction: column;
+    height: 90%;
+    width: 90%;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    overflow: hidden;
+    background-color: white;
+}
+
+.chat-main {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+#messages {
+    flex: 1;
+    padding: 10px;
+    overflow-y: auto;
+    background-color: #f9f9f9;
+}
+
+.message {
+    margin-bottom: 10px;
+    padding: 10px;
+    border-radius: 10px;
+    max-width: 60%;
+}
+
+.message.current-user {
+    background-color: #e1ffc7;
+    align-self: flex-start;
+}
+
+.message.other-user {
+    background-color: #e1e1e1;
+    align-self: flex-end;
+}
+
+#messageForm, #uploadForm {
+    display: flex;
+    padding: 10px;
+    background-color: #f1f1f1;
+}
+
+#messageInput, #fileInput {
+    flex: 1;
+    padding: 10px;
+    border-radius: 20px;
+    border: 1px solid #ccc;
+}
+
+button {
+    padding: 10px;
+    background-color: #128C7E;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #0b665d;
+}
+
+.progress-bar {
+    width: 100%;
+    background-color: #f1f1f1;
+    border-radius: 10px;
+    position: relative;
+}
+
+#uploadProgress {
+    background-color: #4caf50;
+    height: 20px;
+    width: 0%;
+    border-radius: 10px;
+    transition: width 0.4s;
+}
+
+#uploadPercentage {
+    position: absolute;
+    text-align: center;
+    color: white;
+    width: 100%;
+    top: 0;
+    left: 0;
+    line-height: 20px;
+}
+.message {
+    padding: 10px;
+    margin: 5px 0;
+    border-radius: 10px;
+    max-width: 60%;
+    word-wrap: break-word;
+}
+
+.current-user {
+    background-color: #dcf8c6;
+    align-self: flex-end;
+}
+
+.other-user {
+    background-color: #ececec;
+    align-self: flex-start;
+}
+
+.file-preview-message {
+    display: flex;
+    align-items: center;
+}
+
+.file-preview {
+    max-width: 100px;
+    max-height: 100px;
+    margin-right: 10px;
+}

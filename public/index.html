@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Responsive Chat and File Sharing</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="usernamePrompt">
+        <h2>Enter your name</h2>
+        <input type="text" id="usernameInput" placeholder="Your Name">
+        <button id="enterChat">Enter Chat</button>
+    </div>
+
+    <div id="chatContainer" style="display: none; flex-direction: column; height: 90vh;">
+        <!-- Messages Section -->
+        <div id="messages" style="flex: 1; overflow-y: auto; padding: 10px; border-bottom: 2px solid #ccc;">
+            <p style="color: red;" id="errorMessage">IMAGES ARE NOT VALID</p> <!-- Dynamic error message -->
+        </div>
+
+        <!-- File Previews Section -->
+        <div id="filePreviews" style="flex: 1; overflow-y: auto; padding: 10px; border-bottom: 2px solid #ccc;">
+            <!-- Dynamic file previews will be inserted here -->
+        </div>
+
+        <!-- Input Section (for typing messages) -->
+        <div id="inputSection" style="display: flex; align-items: center;">
+            <input type="text" id="messageInput" placeholder="Type a message" style="flex: 1; padding: 10px;" />
+            <button id="sendMessage" class="btn btn-primary">Send</button>
+        </div>
+
+        <!-- File Upload Form -->
+        <form id="uploadForm" style="display: flex; align-items: center; margin-top: 10px;">
+            <input type="file" id="fileInput" style="flex: 1;" accept=".png, .jpg, .jpeg, .gif"/>
+            <button type="submit" class="btn btn-primary">Upload File</button>
+        </form>
+
+        <!-- Progress bar container -->
+        <div id="progressContainer" style="display: flex; align-items: center; margin-top: 10px;">
+            <div id="uploadProgress" style="height: 20px; background-color: #ddd; flex: 1; margin-right: 10px;">
+                <div id="uploadProgressBar" style="height: 100%; width: 0; background-color: #4caf50;"></div>
+            </div>
+            <span id="uploadPercentage">0%</span>
+        </div>
+
+        <!-- Clear all uploads button -->
+        <button id="clearUploads" class="btn btn-danger" style="margin-top: 10px;">Clear All Uploads</button>
+    </div>
+
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
